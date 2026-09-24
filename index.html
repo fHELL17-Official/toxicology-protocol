@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TOXICOLOGY & CARDIOLOGY MONITOR // PROTOCOL #089</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        body {
+            background-color: #080808;
+            color: #d1d5db;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .terminal {
+            max-width: 820px;
+            width: 100%;
+            background: #0f0f11;
+            border: 1px solid #27272a;
+            box-shadow: 0 0 25px rgba(220, 38, 38, 0.12);
+            border-radius: 2px;
+            padding: 30px;
+        }
+
+        .header {
+            border-bottom: 1px solid #27272a;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .status-dot {
+            height: 8px;
+            width: 8px;
+            background-color: #dc2626;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #dc2626;
+            animation: blink 1.2s infinite;
+        }
+
+        @keyframes blink {
+            50% { opacity: 0.2; }
+        }
+
+        .title {
+            color: #dc2626;
+            font-size: 1em;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .counter-box {
+            background: #050505;
+            border: 1px solid #991b1b;
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .counter-title {
+            color: #71717a;
+            font-size: 0.75em;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 8px;
+        }
+
+        .counter-number {
+            color: #ef4444;
+            font-size: 2.6em;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .block {
+            margin-bottom: 22px;
+            border-left: 2px solid #27272a;
+            padding-left: 18px;
+        }
+
+        .block.danger {
+            border-left-color: #dc2626;
+        }
+
+        .block-title {
+            color: #f4f4f5;
+            font-size: 0.95em;
+            margin-bottom: 6px;
+            letter-spacing: 1px;
+            font-weight: bold;
+        }
+
+        .block-text {
+            color: #a1a1aa;
+            font-size: 0.88em;
+            line-height: 1.6;
+        }
+
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 12px;
+            margin-top: 25px;
+        }
+
+        .stat-card {
+            background: #050505;
+            border: 1px solid #27272a;
+            padding: 12px 15px;
+        }
+
+        .stat-val {
+            color: #f59e0b;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        .stat-lbl {
+            color: #71717a;
+            font-size: 0.75em;
+            margin-top: 4px;
+        }
+
+        .footer {
+            margin-top: 30px;
+            border-top: 1px solid #18181b;
+            padding-top: 15px;
+            text-align: center;
+            color: #52525b;
+            font-size: 0.75em;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="terminal">
+    <div class="header">
+        <span class="title">CLINICAL DATA // PATHOPHYSIOLOGY MONITOR</span>
+        <div><span class="status-dot"></span> LIVE_FEED</div>
+    </div>
+
+    <div class="counter-box">
+        <div class="counter-title">Регистрация случаев острой пароксизмальной тахикардии (глобальная статистика за сутки)</div>
+        <div class="counter-number" id="incidentCounter">142,890</div>
+    </div>
+
+    <div class="block danger">
+        <div class="block-title">01. ИСТОЩЕНИЕ ЦЕНТРАЛЬНОЙ НЕРВНОЙ СИСТЕМЫ</div>
+        <div class="block-text">
+            Кофеин блокирует аденозиновые рецепторы головного мозга, предотвращая естественный сигнал о физиологическом утомлении. Происходит искусственная стимуляция выброса адреналина и норадреналина из надпочечников. Вторичный эффект: резкое падение уровня дофамина, вызывающее депрессивные состояния и синдром рикошета (острое истощение) после завершения действия психостимулятора.
+        </div>
+    </div>
+
+    <div class="block danger">
+        <div class="block-title">02. ПАТОЛОГИЯ СЕРДЕЧНО-СОСУДИСТОЙ СИСТЕМЫ</div>
+        <div class="block-text">
+            Сочетание синергических доз кофеина и таурина провоцирует периферический вазоспазм и синусовую тахикардию (частота сердечных сокращений превышает 110–130 уд/мин в покое). Регулярная нагрузка ведёт к гипертрофии миокарда, микроинфарктам и формированию стойкой желудочковой аритмии у подростков.
+        </div>
+    </div>
+
+    <div class="block">
+        <div class="block-title">03. ГИПЕРГЛИКЕМИЧЕСКИЙ ШОК И МЕТАБОЛИЗМ</div>
+        <div class="block-text">
+            Концентрация сахара в стандартной емкости (до 50–60 г) превышает суточную норму метаболизма в 2.5 раза. Это вызывает реактивную гипергликемию, спазм сосудов почек и хроническое истощение бета-клеток поджелудочной железы, повышая риск инсулинорезистентности.
+        </div>
+    </div>
+
+    <div class="block">
+        <div class="block-title">04. ФОРМИРОВАНИЕ ФИЗИОЛОГИЧЕСКОЙ ТЯГИ</div>
+        <div class="block-text">
+            Систематический прием стимуляторов приводит к даунрегуляции (уменьшению чувствительности) рецепторов ЦНС. Для достижения прежнего эффекта бодрости требуется постоянное увеличение дозировки, что классифицируется как кофеиновая зависимость с выраженным абстинентным синдромом (тремор, трепониевые головные боли, раздражительность).
+        </div>
+    </div>
+
+    <div class="stat-grid">
+        <div class="stat-card">
+            <div class="stat-val">150–240 мг</div>
+            <div class="stat-lbl">Доза кофеина на 0.5л (клинический лимит для подростка: 0 мг)</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-val">120/80 &#8594; 145/95</div>
+            <div class="stat-lbl">Средний скачок артериального давления через 30 мин после приема</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-val">X 3.2</div>
+            <div class="stat-lbl">Увеличение риска развития ранней аритмии при постоянном употреблении</div>
+        </div>
+    </div>
+
+    <div class="footer">
+        PROTOCOL #089 // MEDICAL EVALUATION ONLY // NO EMOTIS // NO PROPAGANDA
+    </div>
+</div>
+
+<script>
+    let count = 142890;
+    const counterElement = document.getElementById('incidentCounter');
+
+    function updateCounter() {
+        count += Math.floor(Math.random() * 3) + 1;
+        counterElement.innerText = count.toLocaleString('ru-RU');
+    }
+
+    setInterval(updateCounter, 2100);
+</script>
+
+</body>
+</html>
